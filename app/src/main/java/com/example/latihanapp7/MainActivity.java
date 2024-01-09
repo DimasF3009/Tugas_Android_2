@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private CardView buttonScroll;
     private CardView buttonAlarm;
     private CardView buttonMaps;
+    private CardView buttonMovie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         buttonScroll = findViewById(R.id.scroll);
         buttonAlarm = findViewById(R.id.SetAlarm);
         buttonMaps = findViewById(R.id.showmap);
+        buttonMovie = (findViewById(R.id.movie));
 
         setToolbar();
         setIntent();
@@ -82,6 +84,11 @@ public class MainActivity extends AppCompatActivity {
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }
+        });
+
+        buttonMovie.setOnClickListener(view -> {
+            Intent intent = new Intent(this, MovieActivity.class);
+            startActivity(intent);
         });
     }
 
