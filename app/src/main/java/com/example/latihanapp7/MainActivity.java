@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private CardView buttonAlarm;
     private CardView buttonMaps;
     private CardView buttonMovie;
+    private CardView buttonTrailer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAlarm = findViewById(R.id.SetAlarm);
         buttonMaps = findViewById(R.id.showmap);
         buttonMovie = (findViewById(R.id.movie));
+        buttonTrailer = (findViewById(R.id.filmku));
 
         setToolbar();
         setIntent();
@@ -88,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
         buttonMovie.setOnClickListener(view -> {
             Intent intent = new Intent(this, MovieActivity.class);
+            startActivity(intent);
+        });
+        buttonTrailer.setOnClickListener(view -> {
+            Intent intent = new Intent(this, TrailerActivity.class);
             startActivity(intent);
         });
     }
